@@ -110,7 +110,8 @@ def IlluminationLoss(y_gt,y_out,gray_flag=True,style_weight=1e-2,content_weight=
     #####################################################################
     if(gray_flag):
         rgb_out = tf.image.grayscale_to_rgb(y_out)
-        PLoss = Compute_PLoss(rgb_out,y_gt,style_weight,content_weight)
+        rgb_gt = tf.image.grayscale_to_rgb(y_gt)
+        PLoss = Compute_PLoss(rgb_out,rgb_gt,style_weight,content_weight)
         #print('Ploss',PLoss)
         gray_gt = tf.image.rgb_to_grayscale(y_gt)
         gray_loss = tf.reduce_mean(abs(gray_gt - y_out)) #loss in gray space
