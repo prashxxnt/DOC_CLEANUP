@@ -14,11 +14,11 @@ from model import GetModel
 from utils import load_tf_img
 from loss_function import IlluminationLoss, illu_Loss
 
-# os.environ["CUDA_VISIBLE_DEVICES"]='0,1,2,3'
-# os.environ["CUDA_VISIBLE_DEVICES"]='0'
+os.environ["CUDA_VISIBLE_DEVICES"]='0,1,2,3'
+os.environ["CUDA_VISIBLE_DEVICES"]='0'
 
-# gpu_devices = tf.config.experimental.list_physical_devices('GPU')
-# tf.config.experimental.set_memory_growth(gpu_devices[0], True)
+gpu_devices = tf.config.experimental.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(gpu_devices[0], True)
 
 # tf.config.experimental.set_memory_growth(gpu_devices[0], True)
 ##tf.config.experimental.set_memory_growth(gpu_devices[1], True)
